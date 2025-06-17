@@ -1,6 +1,6 @@
 # 🌸 To-do list buat membantu dedek wulan manage waktu yeyy🌸
 
-To-do list yang di buat mas daffa gantengg buat dedek wulan cantikk, tema nya pake bunga yeyy, animasi nya smooth bikin pingin di smooch mooch mwah, dan warna nya pink yeyy
+To-do list yang di buat mas daffa gantengg buat dedek wulan cantikk, tema nya pake bunga yeyy, animasi nya smooth bikin pingin di smooch mooch mwah, dan warna nya pink yeyy❤❤❤
 
 ## ✨ Fitur-fitur keren
 
