@@ -1,0 +1,21 @@
+{
+  "short_name": "To-do list nya dedek wulan",
+  "name": "sebuah To-do list yang dibuat buat dedek wulan yeyy",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ec407a",
+  "background_color": "#fce4ec",
+  "description": "Yh atur semuanya pake list ini❤"
+}
