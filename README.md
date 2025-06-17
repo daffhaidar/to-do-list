@@ -90,4 +90,4 @@ App ini responsive banget dan lancar di:
 
 **Dibuat dengan cinta dari mas daprut buat dedek wulan yeyy** 💕
 
-_Selamat manage task dengan to-do list yang cantik dan fungsional ini!_
+_SELAMAT BERJUANG MENGGAPAI SEMUA MIMPI DEDEK WULAN YA!! MAS AKAN SELALU SUPPORT ADEK APAPUN KONDISI ADEK SEKARANG! SEMANGATT DEMI UGM❤❤ GOD BLESS YOU!❤❤❤_
