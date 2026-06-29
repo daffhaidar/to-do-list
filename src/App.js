@@ -104,6 +104,53 @@ function App() {
     setEditValue('');
   };
 
+  // Backup: download semua data dedek wulan jadi 1 file JSON
+  const exportData = () => {
+    const payload = {
+      app: 'wulan-todo',
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      todos,
+      notes
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `backup-dedek-wulan-${format(new Date(), 'yyyy-MM-dd')}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  // Restore: baca file JSON, gabung tanpa nimpa data yang udah ada
+  const importData = (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try {
+        const data = JSON.parse(ev.target.result);
+        const incomingTodos = Array.isArray(data.todos) ? data.todos : [];
+        const incomingNotes = Array.isArray(data.notes) ? data.notes : [];
+        setTodos((prev) => {
+          const ids = new Set(prev.map((t) => t.id));
+          return [...prev, ...incomingTodos.filter((t) => t && !ids.has(t.id))];
+        });
+        setNotes((prev) => {
+          const ids = new Set(prev.map((n) => n.id));
+          return [...prev, ...incomingNotes.filter((n) => n && !ids.has(n.id))];
+        });
+        alert('Backup dedek berhasil di-restore yeyy! ❤');
+      } catch (err) {
+        alert('Waduh file backup nya ga kebaca yh dek, coba file yang lain 🥺');
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  };
+
   const handleKeyPress = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
@@ -201,6 +248,15 @@ function App() {
             </motion.div>
           </div>
           <p className="subtitle">✨ Atur tugas dedek, jadwal & catatan dedek di sini yeyy❤❤</p>
+          <div className="backup-bar">
+            <button onClick={exportData} className="backup-btn" title="Download backup data dedek">
+              💾 Backup data dedek
+            </button>
+            <label className="backup-btn restore" title="Restore dari file backup">
+              📂 Restore backup
+              <input type="file" accept="application/json,.json" onChange={importData} style={{ display: 'none' }} />
+            </label>
+          </div>
         </motion.div>
 
         {/* Navigation Tabs */}
