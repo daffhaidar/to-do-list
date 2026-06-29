@@ -962,3 +962,36 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, #e91e63, #c2185b);
 }
+
+/* Backup and Restore bar */
+.backup-bar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.backup-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #c2185b;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid #f8bbd0;
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.backup-btn:hover {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 14px rgba(233, 30, 99, 0.25);
+  transform: translateY(-2px);
+}
+.backup-btn:active { transform: translateY(0); }
+.backup-btn.restore { color: #ad1457; border-color: #f48fb1; }
